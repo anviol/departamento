@@ -1,6 +1,6 @@
 package Class;
 
-public class Professor {
+public class Professor extends Pessoa {
 
     protected int registro;
     protected int gabinete;

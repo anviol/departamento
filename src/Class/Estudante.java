@@ -1,6 +1,6 @@
 package Class;
 
-public class Estudante {
+public class Estudante extends Pessoa{
 
     protected int matricula;
 
