@@ -1,46 +1,58 @@
 package Class;
 
+import java.util.ArrayList;
+
 public class Departamento {
 
     public String telefone;
     public Pessoa coordenador;
     public Pessoa subCoordenador;
-    public Pessoa funcionarios[];
-    public Curso curso = new Curso();
+    public ArrayList<Pessoa> funcionarios = new ArrayList<Pessoa>();
+    public ArrayList<Curso> cursos = new ArrayList<Curso>();
 
-    public Departamento (){
+    public Departamento(Pessoa coordenador, Pessoa subCoordenador){
 
-    }
-
-    public Departamento(String telefone, Pessoa coordenador, Pessoa subCoordenador, Pessoa funcionarios[], Curso curso){
-        setTelefone(telefone);
         setCoordenador(coordenador);
         setSubCoordenador(subCoordenador);
-        setFuncionarios(funcionarios);
-        setCurso(curso);
     }
 
     public void setTelefone(String telefone) {
+
         this.telefone = telefone;
     }
 
     public void setCoordenador(Pessoa coordenador) {
+
         this.coordenador = coordenador;
     }
 
     public void setSubCoordenador(Pessoa subCoordenador) {
+
         this.subCoordenador = subCoordenador;
     }
 
-    public void setFuncionarios(Pessoa[] funcionarios) {
-        this.funcionarios = funcionarios;
+    public void setFuncionarios(Pessoa funcionario) {
+
+        this.funcionarios.add(funcionario);
     }
 
     public void setCurso(Curso curso) {
-        this.curso = curso;
+
+        this.cursos.add(curso);
     }
 
-    public void criarCruso(){
+    public Pessoa getCoordenador() {
+        return coordenador;
+    }
 
+    public Pessoa getSubCoordenador() {
+        return subCoordenador;
+    }
+
+    public Curso criarCruso(String gradeCurricular){
+
+        Curso curso = new Curso(gradeCurricular, this);
+        setCurso(curso);
+        return curso;
     }
 }

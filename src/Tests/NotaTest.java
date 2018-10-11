@@ -1,13 +1,29 @@
 package Tests;
 
-import Class.Nota;
 import static org.junit.Assert.*;
+import Class.*;
 
 class NotaTest {
 
     @org.junit.jupiter.api.Test
     void aprovado() {
-        Nota nota = new Nota();
+
+        Pessoa coodenador = new Pessoa("André");
+        Pessoa subCoordenador = new Pessoa("Renata");
+
+        Departamento departamento = new Departamento(coodenador, subCoordenador);
+
+        Curso curso = new Curso("Grade Curricular", departamento);
+
+        Disciplina disciplina = new Disciplina(curso);
+
+        Professor professor = new Professor("Oliveira");
+
+        Estudante estudante = new Estudante("Luiz");
+
+        Turma turma = new Turma(25, professor, disciplina);
+
+        Nota nota = new Nota(turma, estudante);
 
         nota.setValor(30);
 

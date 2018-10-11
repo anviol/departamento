@@ -1,29 +1,26 @@
 package Class;
 
+import java.util.ArrayList;
+
 public class Curso {
 
     protected String gradeCurricular;
-    public Disciplina disciplina = new Disciplina();
+    public ArrayList<Disciplina> disciplinas = new ArrayList<Disciplina>();
 
-    public Curso(){
+    public Curso(String gradeCurricular, Departamento departamento){
 
-    }
-
-    public Curso(String gradeCurricular){
         setGradeCurricular(gradeCurricular);
-    }
-
-    public Curso(String gradeCurricular, Disciplina disciplina){
-        setGradeCurricular(gradeCurricular);
-        setDisciplina(disciplina);
+        departamento.setCurso(this);
     }
 
     public void setGradeCurricular(String gradeCurricular) {
+
         this.gradeCurricular = gradeCurricular;
     }
 
     public void setDisciplina(Disciplina disciplina) {
-        this.disciplina = disciplina;
+
+        this.disciplinas.add(disciplina);
     }
 
     public void notificarColegiado (){

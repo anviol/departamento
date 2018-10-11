@@ -1,35 +1,37 @@
 package Class;
 
+import java.util.ArrayList;
+
 public class Turma {
 
     private int vagas;
-    public String professor;
-    public Estudante estudantes[];
+    public int aulas;
+    public Professor professor;
+    public ArrayList<Estudante> estudantes = new ArrayList<Estudante>();
 
-    public Turma (){
-
-    }
-
-    public Turma (int vagas, String professor){
+    public Turma (int vagas, Professor professor, Disciplina disciplina){
         setVagas(vagas);
         setProfessor(professor);
-    }
-
-    public Turma (int vagas, String professor, Estudante estudantes[]){
-        setVagas(vagas);
-        setProfessor(professor);
-        setEstudantes(estudantes);
+        disciplina.setTurma(this);
     }
 
     public void setVagas(int vagas) {
+
         this.vagas = vagas;
     }
 
-    public void setProfessor(String professor) {
+    public void setAulas(int aulas) {
+
+        this.aulas = aulas;
+    }
+
+    public void setProfessor(Professor professor) {
+
         this.professor = professor;
     }
 
-    public void setEstudantes(Estudante[] estudantes) {
+    public void setEstudantes(ArrayList<Estudante> estudantes) {
+
         this.estudantes = estudantes;
     }
 

@@ -6,6 +6,10 @@ public class Professor extends Pessoa {
     protected int gabinete;
     public Turma turma;
 
+    public Professor(String nome) {
+        super(nome);
+    }
+
     public int getRegistro() {
         return registro;
     }
